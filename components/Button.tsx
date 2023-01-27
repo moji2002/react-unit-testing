@@ -1,24 +1,19 @@
-import { FC, MouseEventHandler } from "react";
+import { FC, MouseEventHandler, ReactNode } from "react";
 
 type Props = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   name?: string;
-  label: string;
-  variant?: "success" | "danger";
+  children: ReactNode;
 };
 
-const Button: FC<Props> = ({ onClick, label, name, variant = "success" }) => {
-  const colors = {
-    success: "bg-green-500",
-    danger: "bg-red-500",
-  };
+const Button: FC<Props> = ({ onClick, children }) => {
   return (
     <button
+      type="button"
+      className="inline-flex uppercase justify-center shadow-md rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
       onClick={onClick}
-      name={name}
-      className={`${colors[variant]} ml-2   rounded  px-2 py-1 text-sm uppercase text-slate-50`}
     >
-      {label}
+      {children}
     </button>
   );
 };
