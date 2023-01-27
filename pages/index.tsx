@@ -15,7 +15,6 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="pt-4 flex flex-col justify-center items-center w-full ">
-        
         <h1 className="text-2xl mb-5">Doggy Directory 🐶</h1>
         <div className="flex gap-2 mb-8">
           <Dropdown
@@ -26,7 +25,12 @@ const Home = () => {
           />
           <Button>search</Button>
         </div>
-          <Image src='/images/undraw_relaxing_walk.svg' width={600} height={500}/>
+        <Image
+          src="/images/undraw_relaxing_walk.svg"
+          width={600}
+          height={500}
+          alt=""
+        />
       </main>
     </>
   );
