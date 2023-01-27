@@ -1,13 +1,13 @@
-import { FC } from "react";
-import Button from "./Button";
+import { FC } from "react"
+import Button from "./Button"
 
 type Props = {
-  id: string;
-  title: string;
-  compelete: boolean;
-  onCompelete: (id: string) => any;
-  onDelete: (id: string) => any;
-};
+  id: string
+  title: string
+  compelete: boolean
+  onCompelete: (id: string) => any
+  onDelete: (id: string) => any
+}
 
 const Item: FC<Props> = ({ title, id, compelete, onCompelete, onDelete }) => {
   return (
@@ -20,7 +20,7 @@ const Item: FC<Props> = ({ title, id, compelete, onCompelete, onDelete }) => {
       </div>
       <Button label="delete" variant="danger" onClick={() => onDelete(id)} />
     </div>
-  );
-};
+  )
+}
 
-export default Item;
+export default Item

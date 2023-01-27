@@ -1,10 +1,10 @@
-import { FC, MouseEventHandler, ReactNode } from "react";
+import { FC, MouseEventHandler, ReactNode } from "react"
 
 type Props = {
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-  name?: string;
-  children: ReactNode;
-};
+  onClick?: MouseEventHandler<HTMLButtonElement>
+  name?: string
+  children: ReactNode
+}
 
 const Button: FC<Props> = ({ onClick, children }) => {
   return (
@@ -15,7 +15,7 @@ const Button: FC<Props> = ({ onClick, children }) => {
     >
       {children}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

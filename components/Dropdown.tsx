@@ -1,20 +1,25 @@
-import { FC, Fragment, ReactNode } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { FC, Fragment, ReactNode } from "react"
+import { Listbox, Transition } from "@headlessui/react"
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid"
 
 type Item = {
-  id: string;
-  label: string;
-};
+  id: string
+  label: string
+}
 
 type Props = {
-  value: string;
-  onChange: (item: string) => any;
-  list: Item[];
-  title?:string,
-};
+  value: string
+  onChange: (item: string) => any
+  list: Item[]
+  title?: string
+}
 
-const Dropdown: FC<Props> = ({ value, onChange, list ,title = 'Please Select'}) => {
+const Dropdown: FC<Props> = ({
+  value,
+  onChange,
+  list,
+  title = "Please Select",
+}) => {
   return (
     <div className="  w-72">
       <Listbox value={value} onChange={onChange}>
@@ -68,10 +73,10 @@ const Dropdown: FC<Props> = ({ value, onChange, list ,title = 'Please Select'}) 
         </div>
       </Listbox>
     </div>
-  );
-};
+  )
+}
 
-export default Dropdown;
+export default Dropdown
 
 // import { Fragment, useState } from 'react'
 // import { Listbox, Transition } from '@headlessui/react'

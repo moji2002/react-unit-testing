@@ -1,11 +1,11 @@
-import { ChangeEventHandler, FC } from "react";
+import { ChangeEventHandler, FC } from "react"
 
 type Props = {
-  value:string,
-  onChange:ChangeEventHandler<HTMLInputElement>
-};
+  value: string
+  onChange: ChangeEventHandler<HTMLInputElement>
+}
 
-const Input: FC<Props> = ({onChange,value}) => {
+const Input: FC<Props> = ({ onChange, value }) => {
   return (
     <input
       name="todo"
@@ -14,7 +14,7 @@ const Input: FC<Props> = ({onChange,value}) => {
       value={value}
       className="w-full rounded border p-1 "
     />
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

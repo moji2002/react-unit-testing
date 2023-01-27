@@ -1,10 +1,10 @@
-import Head from "next/head";
-import Dropdown from "../components/Dropdown";
-import Button from "../components/Button";
-import Image from "next/image";
+import Head from "next/head"
+import Dropdown from "../components/Dropdown"
+import Button from "../components/Button"
+import Image from "next/image"
 
 const Home = () => {
-  const onBreedChange = (id: string) => {};
+  const onBreedChange = (id: string) => {}
 
   return (
     <>
@@ -33,7 +33,7 @@ const Home = () => {
         />
       </main>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
