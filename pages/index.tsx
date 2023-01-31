@@ -2,9 +2,23 @@ import Head from "next/head"
 import Dropdown from "../components/Dropdown"
 import Button from "../components/Button"
 import Image from "next/image"
+import useDoggy from "../hooks/useDoggy"
+import { useMemo } from "react"
+import ImageCard from "../components/ImageCard"
 
 const Home = () => {
-  const onBreedChange = (id: string) => {}
+  const {
+    breeds,
+    dogImages,
+    isLoading,
+    selectedBreed,
+    onBreedChange,
+    fetchImages,
+  } = useDoggy()
+
+  const normalizedBreeds = useMemo(() => {
+    return breeds.map((b) => ({ id: b, label: b }))
+  }, [breeds])
 
   return (
     <>
@@ -18,19 +32,30 @@ const Home = () => {
         <h1 className="text-2xl mb-5">Doggy Directory 🐶</h1>
         <div className="flex gap-2 mb-8">
           <Dropdown
-            list={[{ id: "1", label: "doberman" }]}
-            value="1"
-            title="Select a breed"
+            list={normalizedBreeds}
+            value={selectedBreed}
+            title={selectedBreed || "Select a breed"}
             onChange={onBreedChange}
           />
-          <Button>search</Button>
+          <Button disabled={!selectedBreed} onClick={fetchImages} loading={isLoading}> 
+            search
+          </Button>
         </div>
-        <Image
-          src="/images/undraw_relaxing_walk.svg"
-          width={600}
-          height={500}
-          alt=""
-        />
+
+        {!dogImages.length && !isLoading && (
+          <Image
+            src="/images/undraw_relaxing_walk.svg"
+            width={600}
+            height={500}
+            alt=""
+          />
+        )}
+
+        <div className="flex flex-wrap justify-center w-full gap-1 ">
+          {dogImages.map((src) => (
+            <ImageCard key={src} src={src} />
+          ))}
+        </div>
       </main>
     </>
   )
